@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Home from "./components/Home";
 import "./App.css";
+import axios from "axios";
+import { ChakraProvider } from "@chakra-ui/react";
+import Home from "../src/components/Home";
 
 function App() {
-  const [details, setDetails] = useState("");
+  const [details, setDetails] = useState([]);
 
   useEffect(() => {
-    axios.get("https://ipapi.co/json/").then((response) => {
-      setDetails(response.data);
-    });
+    axios
+      .get(
+        `https://geo.ipify.org/api/v1?apiKey=at_BOYpXen4uMg5FWwDyBif4dnMxxJ1v&ipAddress=${details}`
+      )
+      .then((response) => {
+        setDetails([response.data]);
+      })
+      .catch((error) => console.log(error));
   }, []);
+
   return (
-    <div>
+    <ChakraProvider>
       <Home details={details} />
-    </div>
+    </ChakraProvider>
   );
 }
 
