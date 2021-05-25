@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Text, Flex, Heading, Image, Input } from "@chakra-ui/react";
 import bg from "../images/pattern-bg.png";
 import iconArrow from "../images/icon-arrow.svg";
@@ -16,7 +16,7 @@ const Home = ({ details }) => {
     <Box bg="gray.100" h="120vh">
       <Box
         bgImage={bg}
-        h={{ base: "55vh", sm: "55vh", md: "55vh", lg: "50vh" }}
+        h={{ base: "50vh", sm: "50vh", md: "50vh", lg: "50vh" }}
       >
         <Flex direction="column" align="center">
           <Heading my={45} color="white">
@@ -25,7 +25,7 @@ const Home = ({ details }) => {
           <Flex align="center">
             <Input
               h={{ base: 55, sm: 55, md: 55, lg: 70 }}
-              w={{ base: 300, sm: 300, md: 300, lg: 700 }}
+              w={{ base: 200, sm: 200, md: 200, lg: 700 }}
               bg="white"
               border="none"
               borderLeftRadius="xl"
@@ -71,7 +71,7 @@ const Home = ({ details }) => {
               fontSize={{ base: 20, sm: 20, md: 20, lg: 30 }}
             >
               {details.map((adress) => {
-                return <h1>{`${adress.ip}`}</h1>;
+                return <div>{`${adress.ip}`}</div>;
               })}
             </Text>
           </Box>
