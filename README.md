@@ -1,6 +1,6 @@
-## Frontend Mentor - IP address tracker
+# Frontend Mentor - IP address tracker
 
-# The challenge
+### The challenge
 
 Users should be able to:
 
