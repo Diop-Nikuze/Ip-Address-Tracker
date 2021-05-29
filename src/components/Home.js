@@ -13,10 +13,10 @@ const Home = ({ details }) => {
   // };
 
   return (
-    <Box bg="gray.100" h="120vh">
+    <Box bg="gray.100" h="100vh">
       <Box
         bgImage={bg}
-        h={{ base: "50vh", sm: "50vh", md: "50vh", lg: "50vh" }}
+        h={{ base: "50vh", sm: "50vh", md: "35vh", lg: "50vh" }}
       >
         <Flex direction="column" align="center">
           <Heading my={45} color="white">
@@ -53,7 +53,7 @@ const Home = ({ details }) => {
           direction={{ base: "column", sm: "column", md: "column", lg: "row" }}
           h={{ base: 250, sm: 250, md: 250, lg: 120 }}
           w={{ base: 300, sm: 300, md: 300, lg: 1100 }}
-          m="50px auto"
+          m={{ base: 35, sm: 35, md: 35, lg: "50px auto" }}
           borderRadius="xl"
           textAlign={{ base: "center", sm: "center", md: "center", lg: "left" }}
         >
