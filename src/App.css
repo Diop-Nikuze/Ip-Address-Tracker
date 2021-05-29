@@ -3,3 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.leaflet-container {
+  width: 250vh;
+  height: 100vh;
+  margin: 60px auto;
+}
