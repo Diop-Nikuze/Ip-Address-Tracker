@@ -16,10 +16,10 @@ const Home = ({ details }) => {
     <Box bg="gray.100" h="100vh">
       <Box
         bgImage={bg}
-        h={{ base: "50vh", sm: "50vh", md: "35vh", lg: "50vh" }}
+        h={{ base: "50vh", sm: "50vh", md: "25vh", lg: "50vh" }}
       >
         <Flex direction="column" align="center">
-          <Heading my={45} color="white">
+          <Heading my={{ base: 25, sm: 25, md: 25, lg: 45 }} color="white">
             IP Address Tracker
           </Heading>
           <Flex align="center">
