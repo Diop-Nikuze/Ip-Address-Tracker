@@ -53,7 +53,7 @@ const Home = ({ details }) => {
           direction={{ base: "column", sm: "column", md: "column", lg: "row" }}
           h={{ base: 250, sm: 250, md: 250, lg: 120 }}
           w={{ base: 300, sm: 300, md: 300, lg: 1100 }}
-          m={{ base: 35, sm: 35, md: 35, lg: "50px auto" }}
+          m="50px auto"
           borderRadius="xl"
           textAlign={{ base: "center", sm: "center", md: "center", lg: "left" }}
         >
