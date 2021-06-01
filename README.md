@@ -11,4 +11,8 @@ Users should be able to:
 
 ---
 
-Details -> https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0
+src/design/desktop-preview.jpg
+
+--
+
+More Details -> https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0
