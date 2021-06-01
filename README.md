@@ -11,7 +11,7 @@ Users should be able to:
 
 ---
 
-![Design preview ](./design/desktop-preview.jpg)
+![Design preview ](../src/design/desktop-preview.jpg)
 
 --
 
