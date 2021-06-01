@@ -11,7 +11,7 @@ Users should be able to:
 
 ---
 
-src/design/desktop-preview.jpg
+/home/diop/Diop/programming/Frontend Challenge/api-address-tracker-master/src/design/desktop-preview.jpg
 
 --
 
