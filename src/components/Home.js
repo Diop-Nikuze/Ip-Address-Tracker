@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Box, Text, Flex, Heading, Image, Input } from "@chakra-ui/react";
 import bg from "../images/pattern-bg.png";
 import iconArrow from "../images/icon-arrow.svg";
@@ -12,6 +12,8 @@ const Home = ({ details }) => {
   //   e.preventDefault();
   //   setData(textInput.current.value);
   // };
+
+  const position = [-3.3896, 29.9256];
 
   return (
     <Box bg="gray.100" h="100vh">
@@ -157,12 +159,12 @@ const Home = ({ details }) => {
         </Flex>
       </Box>
 
-      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+      <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[51.505, -0.09]}>
+        <Marker position={position}>
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
