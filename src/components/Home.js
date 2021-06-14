@@ -1,19 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Box, Text, Flex, Heading, Image, Input } from "@chakra-ui/react";
-import bg from "../images/pattern-bg.png";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import Search from "./Search";
+import React from "react";
+import { Box, Text, Flex } from "@chakra-ui/react";
 
 const Home = ({ details }) => {
   return (
-    <Box bg="gray.100">
+    <Box position="absolute">
       {details.map((address) => {
         return (
-          <Box
-            bgImage={bg}
-            h={{ base: "50vh", sm: "50vh", md: "25vh", lg: "50vh" }}
-          >
-            <Search details={details} />
+          <Box mt={-120}>
             <Flex
               bg="white"
               justify="space-around"
@@ -48,7 +41,7 @@ const Home = ({ details }) => {
                   fontWeight="extrabold"
                   fontSize={{ base: 20, sm: 20, md: 20, lg: 30 }}
                 >
-                  <h1>{`${address.ip}`}</h1>
+                  {`${address.ip}`}
                 </Text>
               </Box>
               <Box
@@ -72,7 +65,7 @@ const Home = ({ details }) => {
                   fontWeight="extrabold"
                   fontSize={{ base: 20, sm: 20, md: 20, lg: 30 }}
                 >
-                  <h1>{`${address.location.country}`}</h1>
+                  {`${address.location.country}`}
                 </Text>
               </Box>
               <Box
@@ -96,7 +89,7 @@ const Home = ({ details }) => {
                   fontWeight="extrabold"
                   fontSize={{ base: 20, sm: 20, md: 20, lg: 30 }}
                 >
-                  <h1>{`${address.location.timezone}`}</h1>
+                  {`${address.location.timezone}`}
                 </Text>
               </Box>
               <Box
@@ -120,36 +113,11 @@ const Home = ({ details }) => {
                   fontWeight="extrabold"
                   fontSize={{ base: 20, sm: 20, md: 20, lg: 30 }}
                 >
-                  <h1>{`${address.isp}`}</h1>
+                  {`${address.isp}`}
                 </Text>
               </Box>
             </Flex>
           </Box>
-        );
-      })}
-
-      {details.map((loc) => {
-        return (
-          <MapContainer
-            key={loc.id}
-            center={[loc.location.lat, loc.location.lng]}
-            zoom={13}
-            scrollWheelZoom={true}
-          >
-            <TileLayer
-              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-
-            <Marker
-              key={loc.id}
-              position={[loc.location.lat, loc.location.lng]}
-            >
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
-          </MapContainer>
         );
       })}
     </Box>

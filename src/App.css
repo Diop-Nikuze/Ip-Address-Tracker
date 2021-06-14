@@ -5,7 +5,6 @@
 }
 
 .leaflet-container {
-  width: 200vh;
-  height: 500px;
-  margin: 80px auto 10px auto;
+  height: 70vh;
+  width: 100vw;
 }

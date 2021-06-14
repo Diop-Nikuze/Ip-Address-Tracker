@@ -1,28 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Flex, Heading, Input, Image } from "@chakra-ui/react";
-import iconArrow from "../images/icon-arrow.svg";
+import iconArrow from "../../src/images/icon-arrow.svg";
+import bg from "../../src/images/pattern-bg.png";
 
-const Search = ({ details }) => {
-  const [search, setSearch] = useState("");
-  const [ip, setIp] = useState(details);
-
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setIp(search);
-    console.log(event.target.value);
-    setSearch("");
-  };
-
+const Search = ({ onchange, onsubmit }) => {
   return (
-    <Flex direction="column" align="center">
+    <Flex
+      direction="column"
+      align="center"
+      bgImage={bg}
+      h={{ base: "50vh", sm: "50vh", md: "25vh", lg: "50vh" }}
+      position="relative"
+    >
       <Heading my={{ base: 25, sm: 25, md: 25, lg: 45 }} color="white">
         IP Address Tracker
       </Heading>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onsubmit}>
         <Flex align="center">
           <Input
             h={{ base: 55, sm: 55, md: 55, lg: 70 }}
@@ -33,7 +26,7 @@ const Search = ({ details }) => {
             borderLeftRadius="xl"
             borderRightRadius="none"
             fontSize={18}
-            onChange={handleChange}
+            onChange={onchange}
           ></Input>
           <Flex
             bg="black"
