@@ -13,10 +13,8 @@ const Home = ({ details }) => {
   //   setData(textInput.current.value);
   // };
 
-  const position = [-3.3896, 29.9256];
-
   return (
-    <Box bg="gray.100" h="100vh">
+    <Box bg="gray.100">
       <Box
         bgImage={bg}
         h={{ base: "50vh", sm: "50vh", md: "25vh", lg: "50vh" }}
@@ -159,17 +157,34 @@ const Home = ({ details }) => {
         </Flex>
       </Box>
 
-      <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-      </MapContainer>
+      {details.map((loc) => {
+        return (
+          <MapContainer
+            key={loc.id}
+            center={[loc.location.lat, loc.location.lng]}
+            zoom={13}
+            scrollWheelZoom={true}
+          >
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+
+            {details.map((loc) => {
+              return (
+                <Marker
+                  key={loc.id}
+                  position={[loc.location.lat, loc.location.lng]}
+                >
+                  <Popup>
+                    A pretty CSS3 popup. <br /> Easily customizable.
+                  </Popup>
+                </Marker>
+              );
+            })}
+          </MapContainer>
+        );
+      })}
     </Box>
   );
 };

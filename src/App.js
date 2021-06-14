@@ -19,9 +19,11 @@ function App() {
   }, []);
 
   return (
-    <ChakraProvider>
-      <Home details={details} />
-    </ChakraProvider>
+    <div>
+      <ChakraProvider>
+        <Home details={details} />
+      </ChakraProvider>
+    </div>
   );
 }
 
