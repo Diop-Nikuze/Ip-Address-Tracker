@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Text, Flex } from "@chakra-ui/react";
 
-const Home = ({ details }) => {
+const Data = ({ details }) => {
   return (
-    <Box position="absolute">
+    <Box>
       {details.map((address) => {
         return (
           <Box mt={-120}>
@@ -89,7 +89,7 @@ const Home = ({ details }) => {
                   fontWeight="extrabold"
                   fontSize={{ base: 20, sm: 20, md: 20, lg: 30 }}
                 >
-                  {`${address.location.timezone}`}
+                  UTC {`${address.location.timezone}`}
                 </Text>
               </Box>
               <Box
@@ -124,4 +124,4 @@ const Home = ({ details }) => {
   );
 };
 
-export default Home;
+export default Data;

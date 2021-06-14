@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const Map = ({ locations }) => {
   return (
-    <Box mt={150}>
+    <Box mt={-100} pos="absolute" zIndex="-1">
       {locations.map((loc) => {
         return (
           <MapContainer
