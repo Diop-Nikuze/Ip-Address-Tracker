@@ -19,7 +19,7 @@ const Search = ({ onchange, onsubmit }) => {
         <Flex align="center">
           <Input
             h={{ base: 55, sm: 55, md: 55, lg: 50 }}
-            w={{ base: 200, sm: 200, md: 200, lg: 500 }}
+            w={{ base: "100%", sm: "100%", md: 500, lg: 500 }}
             bg="white"
             placeholder="Search for any IP address or domain"
             border="none"

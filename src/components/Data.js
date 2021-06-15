@@ -3,10 +3,10 @@ import { Box, Text, Flex } from "@chakra-ui/react";
 
 const Data = ({ details }) => {
   return (
-    <Box>
+    <Box maxWidth="90%" margin="50px auto">
       {details.map((address) => {
         return (
-          <Box mt={-120}>
+          <Box mt={{ base: -180, sm: -200, md: -110, lg: -120 }}>
             <Flex
               bg="white"
               justify="space-around"
@@ -14,17 +14,16 @@ const Data = ({ details }) => {
               direction={{
                 base: "column",
                 sm: "column",
-                md: "column",
+                md: "row  ",
                 lg: "row",
               }}
-              h={{ base: 250, sm: 250, md: 250, lg: 120 }}
-              w={{ base: 300, sm: 300, md: 300, lg: 1100 }}
-              m="50px auto"
+              h={{ base: 250, sm: 250, md: 100, lg: 120 }}
+              w={{ base: "100%", sm: "100%", md: "100%", lg: "100%" }}
               borderRadius="xl"
               textAlign={{
                 base: "center",
                 sm: "center",
-                md: "center",
+                md: "left",
                 lg: "left",
               }}
             >

@@ -8,3 +8,26 @@
   height: 70vh;
   width: 100vw;
 }
+
+.leaflet-popup-content-wrapper {
+  background-color: green;
+}
+
+.leaflet-popup-content {
+  color: white;
+  font-size: 15px;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover {
+  color: red;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: green;
+}
