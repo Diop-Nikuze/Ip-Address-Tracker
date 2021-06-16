@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import { Box, ChakraProvider, Flex, Spinner } from "@chakra-ui/react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
 import Data from "./components/Data";
 import Search from "./components/Search";
 import Map from "./components/Map";
@@ -10,7 +10,7 @@ function App() {
   const [details, setDetails] = useState([]);
   const [search, setSearch] = useState("");
   const [ip, setIP] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -22,13 +22,14 @@ function App() {
   };
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(
         `https://geo.ipify.org/api/v1?apiKey=at_BOYpXen4uMg5FWwDyBif4dnMxxJ1v&ipAddress=${ip}`
       )
       .then((response) => {
         setDetails([response.data]);
-        setLoading(true);
+        setLoading(false);
       })
       .catch((error) => console.log(error));
   }, [ip]);
@@ -36,25 +37,8 @@ function App() {
   return (
     <ChakraProvider>
       <Search onchange={handleChange} onsubmit={handleSubmit} />
-      <Box>
-        {loading ? (
-          <Data details={details} />
-        ) : (
-          <Flex justifyContent="center">
-            <Spinner color="black.500" size="xl" speed=".8s" />
-          </Flex>
-        )}
-      </Box>
-
-      <Box>
-        {loading ? (
-          <Map locations={details} />
-        ) : (
-          <Flex justifyContent="center" alignItems="center" h="70vh">
-            <Spinner color="black.500" size="xl" speed=".8s" />
-          </Flex>
-        )}
-      </Box>
+      <Data details={details} loading={loading} />
+      <Map locations={details} />
     </ChakraProvider>
   );
 }

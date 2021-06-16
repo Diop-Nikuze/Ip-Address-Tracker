@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Link } from "@chakra-ui/react";
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import iconLocation from "../images/icon-location.svg";
@@ -38,6 +38,24 @@ const Map = ({ locations }) => {
           </MapContainer>
         );
       })}
+
+      <Box textAlign="center" fontSize={15}>
+        Challenge by {""}
+        <Link
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          textDecor="underline"
+        >
+          Frontend Mentor.
+        </Link>{" "}
+        Coded by {""}
+        <Link
+          href="https://github.com/Nikuze/Ip-Address-Tracker"
+          textDecor="underline"
+        >
+          Diop Nikuze
+        </Link>
+      </Box>
     </Box>
   );
 };

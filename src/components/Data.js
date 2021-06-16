@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, Text, Flex } from "@chakra-ui/react";
+import { Box, Text, Flex, Image } from "@chakra-ui/react";
+import spinner from "../images/spinner.svg";
 
-const Data = ({ details }) => {
+const Data = ({ details, loading }) => {
   return (
     <Box maxWidth="90%" margin="50px auto">
       {details.map((address) => {
@@ -17,7 +18,8 @@ const Data = ({ details }) => {
                 md: "row  ",
                 lg: "row",
               }}
-              h={{ base: 250, sm: 250, md: 100, lg: 120 }}
+              h={{ base: "100%", sm: "100%", md: 100, lg: 120 }}
+              py={{ base: 10 }}
               w={{ base: "100%", sm: "100%", md: "100%", lg: "100%" }}
               borderRadius="xl"
               textAlign={{
@@ -40,7 +42,20 @@ const Data = ({ details }) => {
                   fontWeight="extrabold"
                   fontSize={{ base: 20, sm: 20, md: 20, lg: 30 }}
                 >
-                  {`${address.ip}`}
+                  {loading ? (
+                    <Image
+                      src={spinner}
+                      margin={{
+                        base: "auto",
+                        sm: "auto",
+                        md: 0,
+                        lg: 0,
+                      }}
+                      w="30%"
+                    ></Image>
+                  ) : (
+                    address.ip
+                  )}
                 </Text>
               </Box>
               <Box
@@ -57,6 +72,7 @@ const Data = ({ details }) => {
                   textTransform="uppercase"
                   fontWeight="bold"
                   fontSize={{ base: 10, sm: 10, md: 10, lg: 13 }}
+                  pt={{ base: 5, sm: 5, md: 0, lg: 0 }}
                 >
                   Location
                 </Text>
@@ -64,7 +80,20 @@ const Data = ({ details }) => {
                   fontWeight="extrabold"
                   fontSize={{ base: 20, sm: 20, md: 20, lg: 30 }}
                 >
-                  {`${address.location.country}`}
+                  {loading ? (
+                    <Image
+                      src={spinner}
+                      margin={{
+                        base: "auto",
+                        sm: "auto",
+                        md: 0,
+                        lg: 0,
+                      }}
+                      w="30%"
+                    ></Image>
+                  ) : (
+                    address.location.country
+                  )}
                 </Text>
               </Box>
               <Box
@@ -81,6 +110,7 @@ const Data = ({ details }) => {
                   textTransform="uppercase"
                   fontWeight="bold"
                   fontSize={{ base: 10, sm: 10, md: 10, lg: 13 }}
+                  pt={{ base: 5, sm: 5, md: 0, lg: 0 }}
                 >
                   Timezone
                 </Text>
@@ -88,7 +118,20 @@ const Data = ({ details }) => {
                   fontWeight="extrabold"
                   fontSize={{ base: 20, sm: 20, md: 20, lg: 30 }}
                 >
-                  UTC {`${address.location.timezone}`}
+                  {loading ? (
+                    <Image
+                      src={spinner}
+                      margin={{
+                        base: "auto",
+                        sm: "auto",
+                        md: 0,
+                        lg: 0,
+                      }}
+                      w="30%"
+                    ></Image>
+                  ) : (
+                    address.location.timezone
+                  )}
                 </Text>
               </Box>
               <Box
@@ -105,6 +148,7 @@ const Data = ({ details }) => {
                   textTransform="uppercase"
                   fontWeight="bold"
                   fontSize={{ base: 10, sm: 10, md: 10, lg: 13 }}
+                  pt={{ base: 5, sm: 5, md: 0, lg: 0 }}
                 >
                   Isp
                 </Text>
@@ -112,7 +156,20 @@ const Data = ({ details }) => {
                   fontWeight="extrabold"
                   fontSize={{ base: 20, sm: 20, md: 20, lg: 30 }}
                 >
-                  {`${address.isp}`}
+                  {loading ? (
+                    <Image
+                      src={spinner}
+                      margin={{
+                        base: "auto",
+                        sm: "auto",
+                        md: 0,
+                        lg: 0,
+                      }}
+                      w="30%"
+                    ></Image>
+                  ) : (
+                    address.isp
+                  )}
                 </Text>
               </Box>
             </Flex>
