@@ -31,3 +31,21 @@
 .leaflet-popup-tip {
   background: green;
 }
+
+@media only screen and (width: 734px) {
+  div.css-woa9b {
+    height: 20vh;
+  }
+  div.css-737n2k {
+    margin: 120px auto;
+  }
+  div.css-1jc67xf {
+    flex-direction: row;
+    height: 100px;
+    text-align: left;
+  }
+
+  div.css-s9smi9 {
+    margin-top: -200px;
+  }
+}

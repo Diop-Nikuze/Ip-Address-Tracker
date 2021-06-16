@@ -41,7 +41,7 @@ function App() {
           <Data details={details} />
         ) : (
           <Flex justifyContent="center">
-            <Spinner color="red.500" size="xl" speed=".8s" />
+            <Spinner color="black.500" size="xl" speed=".8s" />
           </Flex>
         )}
       </Box>
@@ -51,7 +51,7 @@ function App() {
           <Map locations={details} />
         ) : (
           <Flex justifyContent="center" alignItems="center" h="70vh">
-            <Spinner color="red.500" size="xl" speed=".8s" />
+            <Spinner color="black.500" size="xl" speed=".8s" />
           </Flex>
         )}
       </Box>

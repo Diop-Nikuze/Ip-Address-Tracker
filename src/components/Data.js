@@ -6,7 +6,7 @@ const Data = ({ details }) => {
     <Box maxWidth="90%" margin="50px auto">
       {details.map((address) => {
         return (
-          <Box mt={{ base: -180, sm: -200, md: -110, lg: -120 }}>
+          <Box mt={{ base: -150, sm: -150, md: -110, lg: -120 }}>
             <Flex
               bg="white"
               justify="space-around"
